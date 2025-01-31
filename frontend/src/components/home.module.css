@@ -1,0 +1,36 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    color:white;
+    background-color: rgb(0, 0, 0);
+    padding: 40px ;
+    h3{
+        margin-top: 20px;
+    }
+    form{
+        display: flex;
+        margin-top: 28px;
+    flex-direction: column; 
+    gap:3rem;
+    input{
+        color:white;
+        background-color: black;
+        padding: 30px;
+        outline: none;
+        border: 0.2px solid rgb(65, 65, 65);
+        border-radius: 0.4rem;
+    }
+    button{
+        background-color: #fffeff;
+        color: rgb(0, 0, 0);
+        padding: 1rem 2rem;
+        cursor: pointer;
+        border: none;
+        font-weight: bold;
+        border-radius: 0.4rem;
+        font-size: 1rem;
+       
+        outline: none;
+    }
+    }
+}

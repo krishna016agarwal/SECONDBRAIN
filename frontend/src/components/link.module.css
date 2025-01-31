@@ -1,0 +1,51 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    color:white;
+   
+    background-color: rgb(0, 0, 0);
+    padding: 40px 40px 100px 40px;
+    .section{
+        flex-wrap: wrap;
+        display: flex;
+        form{
+            display: flex;
+            margin-left: 20px;
+            margin-top: 28px;
+            
+        flex-direction: column; 
+        gap:1rem;
+        width:370px;
+       
+    
+        border: 0.2px solid rgb(65, 65, 65);
+        border-radius: 0.4rem;
+        padding: 20px 40px 34px;
+        input{
+            color:white;
+            background-color: black;
+            padding:15px 40px 15px 15px;
+            outline: none;
+            width:300px;
+            height: 10px;
+            border: 0.2px solid rgb(65, 65, 65);
+            border-radius: 0.4rem;
+        }
+        button{
+            background-color: #000000;
+            color: rgb(255, 255, 255);
+            padding: 1rem 2rem;
+            cursor: pointer;
+            border: none;
+            width:300px;
+            font-weight: bold;
+            border-radius: 0.4rem;
+            font-size: 1rem;
+            border: 0.2px solid rgb(65, 65, 65);
+            border-radius: 0.4rem;
+            outline: none;
+        }
+        }
+    }
+    
+}
