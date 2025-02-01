@@ -1,6 +1,7 @@
 import React from 'react'
 import style from "./link.module.css";
 import { useState,useEffect } from 'react';
+import Sidebar from './sidebar';
 export default function Links() {
      const [state, setstate] = useState({
             title:"",
@@ -28,7 +29,9 @@ export default function Links() {
           };
   return (
      <>
-        <div className={style.main}>
+   
+         <div className={style.container3}>
+         <div className={style.main}>
             <h1>Links</h1>
            <div className={style.section}>
            <form onSubmit={(event)=>handleSubmit(event)}>
@@ -151,6 +154,9 @@ export default function Links() {
            </div>
 
         </div>
+        
+       <Sidebar></Sidebar>
+         </div>
         </>
   )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import style from "./question.module.css";
 import { useState,useEffect } from 'react';
+import Sidebar from './sidebar';
 export default function Ideas() {
      const [state, setstate] = useState({
             title:"",
@@ -28,7 +29,9 @@ export default function Ideas() {
           };
   return (
     <>
-       <div className={style.main}>
+      
+        <div className={style.container2}>
+        <div className={style.main}>
            <h1>Ideas</h1>
            <form onSubmit={(event)=>handleSubmit(event)}>
            <input
@@ -50,6 +53,8 @@ export default function Ideas() {
               <button type="submit">Add idea</button>
            </form>
        </div>
+       <Sidebar></Sidebar>
+        </div>
        </>
   )
 }
