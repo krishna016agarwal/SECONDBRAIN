@@ -2,9 +2,14 @@ import React from 'react'
 import style from "./link.module.css";
 import { useState,useEffect } from 'react';
 import { LuFacebook } from "react-icons/lu";
+import { FiLinkedin } from "react-icons/fi";
+import { PiTelegramLogo } from "react-icons/pi";
+import { FaQuora } from "react-icons/fa6";
+import { BiLogoPinterestAlt } from "react-icons/bi";
 import Sidebar from './sidebar';
 import { FaInstagram } from "react-icons/fa";
 import { FiYoutube } from "react-icons/fi";
+import { IoLogoReddit } from "react-icons/io5";
 export default function Links() {
      const [state, setstate] = useState({
             title:"",
@@ -72,7 +77,10 @@ export default function Links() {
                <button type="submit">Save</button>
             </form>
             <form onSubmit={(event)=>handleSubmit(event)}>
-                <h2>LinkeIn</h2>
+            <div className={style.box4}>
+            <FiLinkedin style={{color:"white",height:"25px" ,width:"45px"}}/>
+                <h2>LinkedIn</h2>
+                </div>
             <input
                 type="text"
                 placeholder="Add link Title"
@@ -101,7 +109,10 @@ export default function Links() {
                <button type="submit">Save</button>
             </form>
             <form onSubmit={(event)=>handleSubmit(event)}>
+            <div className={style.box4}>
+            <FaQuora  style={{color:"white",height:"25px" ,width:"45px"}}/>
                 <h2>Quora</h2>
+                </div>
             <input
                 type="text"
                 placeholder="Add link Title"
@@ -114,7 +125,10 @@ export default function Links() {
                <button type="submit">Save</button>
             </form>
             <form onSubmit={(event)=>handleSubmit(event)}>
+            <div className={style.box4}>
+            <IoLogoReddit  style={{color:"white",height:"25px" ,width:"45px"}}/>
                 <h2>Reddit</h2>
+                </div>
             <input
                 type="text"
                 placeholder="Add link Title"
@@ -127,7 +141,10 @@ export default function Links() {
                <button type="submit">Save</button>
             </form>
             <form onSubmit={(event)=>handleSubmit(event)}>
+            <div className={style.box4}>
+            <PiTelegramLogo   style={{color:"white",height:"25px" ,width:"45px"}}/>
                 <h2>Telegram</h2>
+                </div>
             <input
                 type="text"
                 placeholder="Add link Title"
@@ -140,7 +157,10 @@ export default function Links() {
                <button type="submit">Save</button>
             </form>
             <form onSubmit={(event)=>handleSubmit(event)}>
+            <div className={style.box4}>
+            <BiLogoPinterestAlt   style={{color:"white",height:"25px" ,width:"45px"}}/>
                 <h2>Pinterest</h2>
+                </div>
             <input
                 type="text"
                 placeholder="Add link Title"
@@ -153,7 +173,10 @@ export default function Links() {
                <button type="submit">Save</button>
             </form>
             <form onSubmit={(event)=>handleSubmit(event)}>
-                <h2>Other Websites</h2>
+            <div className={style.box4}>
+            <IoLogoReddit  style={{color:"white",height:"25px" ,width:"45px"}}/>
+                <h2>Other Website</h2>
+                </div>
             <input
                 type="text"
                 placeholder="Add link Title"

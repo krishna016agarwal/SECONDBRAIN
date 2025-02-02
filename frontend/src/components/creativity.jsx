@@ -1,60 +1,83 @@
-import React from 'react'
+import React, { useState } from "react";
 import style from "./question.module.css";
-import { useState,useEffect } from 'react';
-import Sidebar from './sidebar';
-export default function Creativity() {
-     const [state, setstate] = useState({
-            title:"",
-            creativity:"",
-          });
-          const handleChange = (e) => {
-            setstate({ ...state, [e.target.name]: e.target.value });
-          };
-          const handleSubmit = async (event) => {
-            event.preventDefault();
-        
-        
-              const { data } = await axios.post("http://localhost:8000/api/crcreativity", {
-              title,question
-              });
-              if (data.status === false) {
-                toast.error(data.message, toastOptions);
-              }
-              if (data.status === true) {
-                setstate({ title: "", question: ""});
-                toast.success("Question is successfully added", toastOptions);
-               
-              }
-            
-          };
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
+import Sidebar from "./sidebar";
+import QuestionCard from "./questioncard"; // Import the new component
+
+export default function Questions() {
+  const [questions, setQuestions] = useState([]);
+  const [state, setState] = useState({ title: "", question: "" });
+
+  const toastOptions = {
+    position: "bottom-right",
+    autoClose: 5000,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "light",
+  };
+
+  const handleChange = (e) => {
+    setState({ ...state, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const { title, question } = state;
+
+    if (title.trim() && question.trim()) {
+      setQuestions([...questions, { title, question }]);
+      setState({ title: "", question: "" });
+      toast.success("Your creativity has been added successfully ", toastOptions);
+    } else {
+      toast.error("Both fields are required", toastOptions);
+    }
+  };
+
+  const handleDelete = (index) => {
+    setQuestions(questions.filter((_, i) => i !== index));
+  };
+
   return (
-   <>
-    <div className={style.container2}>
-    <div className={style.main}>
+    <>
+      <div className={style.container2}>
+        <div className={style.main}>
           <h1>Creativity</h1>
-          <form onSubmit={(event)=>handleSubmit(event)}>
-          <input
+          <form onSubmit={handleSubmit}>
+            <input
               type="text"
-              placeholder="Add Question Title"
+              placeholder="Title name"
               name="title"
               required
-              value={state.username}
-              onChange={(e) => handleChange(e)}
-            ></input>
-             <input
+              value={state.title}
+              onChange={handleChange}
+            />
+            <input
               type="text"
-              placeholder="Enter creativity Content"
-              name="creativity"
+              placeholder="Enter Your Creativity"
+              name="question"
               required
-              value={state.username}
-              onChange={(e) => handleChange(e)}
-            ></input>
-             <button type="submit">Add creativity</button>
+              value={state.question}
+              onChange={handleChange}
+            />
+            <button type="submit">Add Creativity</button>
           </form>
+          <ToastContainer />
+
+          {/* Scrollable Questions List */}
+          <div className={style.scrollContainer}>
+            {questions.map((q, index) => (
+              <QuestionCard
+                key={index}
+                title={q.title}
+                question={q.question}
+                onDelete={() => handleDelete(index)}
+              />
+            ))}
+          </div>
+        </div>
+        <Sidebar />
       </div>
-      <Sidebar isactivate2={"creativity"}></Sidebar>
-    </div>
-    
-      </>
-  )
+    </>
+  );
 }

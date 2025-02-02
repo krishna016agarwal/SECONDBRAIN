@@ -1,15 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./question.module.css";
-import { useState, useEffect } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import Sidebar from "./sidebar";
+import QuestionCard from "./questioncard"; // Import the new component
+
 export default function Questions() {
-  const arr = [];
-  const [state, setstate] = useState({
-    title: "",
-    question: "",
-  });
+  const [questions, setQuestions] = useState([]);
+  const [state, setState] = useState({ title: "", question: "" });
+
   const toastOptions = {
     position: "bottom-right",
     autoClose: 5000,
@@ -17,68 +16,67 @@ export default function Questions() {
     draggable: true,
     theme: "light",
   };
+
   const handleChange = (e) => {
-    setstate({ ...state, [e.target.name]: e.target.value });
+    setState({ ...state, [e.target.name]: e.target.value });
   };
-  const handleSubmit = async (event) => {
+
+  const handleSubmit = (event) => {
     event.preventDefault();
-
     const { title, question } = state;
-    arr.push({ title, question });
-    console.log(arr);
 
-    setstate({ title: "", question: "" });
-    // const { data } = await axios.post("http://localhost:8000/api/question", {
-    // title,question
-    // });
-    // if (data.status === false) {
-    //   toast.error(data.message, toastOptions);
-    // }
-    // if (data.status === true) {
-    //   setstate({ title: "", question: ""});
-    //   toast.success("Question is successfully added", toastOptions);
-
-    // }
-    toast.success("Question is successfully added", toastOptions);
+    if (title.trim() && question.trim()) {
+      setQuestions([...questions, { title, question }]);
+      setState({ title: "", question: "" });
+      toast.success("Question successfully added", toastOptions);
+    } else {
+      toast.error("Both fields are required", toastOptions);
+    }
   };
+
+  const handleDelete = (index) => {
+    setQuestions(questions.filter((_, i) => i !== index));
+  };
+
   return (
     <>
       <div className={style.container2}>
         <div className={style.main}>
           <h1>Questions</h1>
-          <form onSubmit={(event) => handleSubmit(event)}>
+          <form onSubmit={handleSubmit}>
             <input
               type="text"
               placeholder="Add Question Title"
               name="title"
               required
               value={state.title}
-              onChange={(e) => handleChange(e)}
-            ></input>
+              onChange={handleChange}
+            />
             <input
               type="text"
               placeholder="Enter Question Content"
               name="question"
               required
               value={state.question}
-              onChange={(e) => handleChange(e)}
-            ></input>
+              onChange={handleChange}
+            />
             <button type="submit">Add Question</button>
           </form>
           <ToastContainer />
-          <div className={style.container}>
-            <div className={style.head}>
-              <div className={style.title}>{/* {title} */}</div>
-              <h5>question</h5>
-            </div>
-            <div className={style.body}>{/* {question} */}</div>
-            <div className={style.foot}>
-              <button className={style.share}>Share</button>
-              <button className={style.delete}>Delete</button>
-            </div>
+
+          {/* Scrollable Questions List */}
+          <div className={style.scrollContainer}>
+            {questions.map((q, index) => (
+              <QuestionCard
+                key={index}
+                title={q.title}
+                question={q.question}
+                onDelete={() => handleDelete(index)}
+              />
+            ))}
           </div>
         </div>
-        <Sidebar isactivate2={"questions"}></Sidebar>
+        <Sidebar />
       </div>
     </>
   );
