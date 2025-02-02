@@ -1,0 +1,42 @@
+.card {
+    background: #121212;
+    color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.head {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+p {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.foot {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.share,
+.delete {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.share {
+    background-color: #007bff;
+    color: white;
+}
+
+.delete {
+    background-color: #ff4d4d;
+    color: white;
+}

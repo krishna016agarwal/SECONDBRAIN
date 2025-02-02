@@ -79,3 +79,11 @@ button{
 .container2{
     display: flex;
 }
+.scrollContainer {
+    max-height: 400px; /* Adjust based on your layout */
+    overflow-y: auto;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #333;
+  }
+  
