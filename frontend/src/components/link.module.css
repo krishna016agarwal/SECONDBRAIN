@@ -60,7 +60,7 @@
 }
 
 .scrollContainer {
- width: 7000vw;
+ 
     max-height: 100vh; /* Adjust based on your layout */
     max-width: 80vw;
     overflow-y: auto;

@@ -25,7 +25,7 @@ export default function Sidebar({isactivate2}) {
             }  ${style.symbol}`}
             onClick={() => handleClick2("home")}
           >
-            <FaHome style={{ color: "white" ,marginTop:"14px"}} />
+            <FaHome style={{ color: "white" ,marginTop:"20px"}} />
             <p>Home</p>
           </div>
         </NavLink>
@@ -37,8 +37,8 @@ export default function Sidebar({isactivate2}) {
             }  ${style.symbol}`}
             onClick={() => handleClick2("questions")}
           >
-            <CiCircleQuestion style={{ color: "white" ,marginTop:"14px"}} />
-            <p>question</p>
+            <CiCircleQuestion style={{ color: "white" ,marginTop:"20px"}} />
+            <p>Question</p>
           </div>
         </NavLink>
 
@@ -49,7 +49,7 @@ export default function Sidebar({isactivate2}) {
             }  ${style.symbol}`}
             onClick={() => handleClick2("ideas")}
           >
-            <AiOutlineBulb style={{ color: "white" ,marginTop:"14px"}} />
+            <AiOutlineBulb style={{ color: "white" ,marginTop:"20px"}} />
             <p>ideas</p>
           </div>
         </NavLink>
@@ -61,7 +61,7 @@ export default function Sidebar({isactivate2}) {
             }  ${style.symbol}`}
             onClick={() => handleClick2("links")}
           >
-            <RiLinksFill style={{ color: "white",marginTop:"14px" }} />
+            <RiLinksFill style={{ color: "white",marginTop:"20px" }} />
             <p>links</p>
           </div>
         </NavLink>
@@ -73,7 +73,7 @@ export default function Sidebar({isactivate2}) {
             }  ${style.symbol}`}
             onClick={() => handleClick2("creativity")}
           >
-            <HiFire style={{ color: "white",marginTop:"14px" }} />
+            <HiFire style={{ color: "white",marginTop:"20px" }} />
             <p>creativity</p>
           </div>
         </NavLink>

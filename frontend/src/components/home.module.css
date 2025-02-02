@@ -6,7 +6,7 @@
   height: 100vh;
   padding: 40px;
   width: 80vw;
-  h2{
+  h2 {
     margin-top: 30px;
   }
   .section {
@@ -14,7 +14,7 @@
     justify-content: space-around;
     margin-top: 50px;
     background-color: rgb(42, 42, 42);
-    padding: 4px ;
+    padding: 4px;
     cursor: pointer;
     border-radius: 0.6rem;
     .sec {
@@ -38,17 +38,17 @@
     cursor: pointer;
     border-radius: 0.6rem;
     .sec2 {
-      width:270px;
+      width: 270px;
 
       text-align: center;
       padding: 10px;
       font-size: larger;
     }
-    .activate{
-            background-color: black;
-              padding: 13px;
-              border-radius: 0.6rem;
-        }
+    .activate {
+      background-color: black;
+      padding: 13px;
+      border-radius: 0.6rem;
+    }
   }
   h3 {
     margin-top: 20px;
@@ -119,29 +119,29 @@
     }
   }
 
-  .search{
+  .box45 {
     display: flex;
-    input{
+    input {
       color: white;
       background-color: black;
       padding: 10px;
       outline: none;
       border: 0.2px solid rgb(51, 51, 51);
       border-radius: 0.4rem;
-     height: 10vh;
+      height: 10vh;
       margin-top: 10px;
       width: 50vw;
     }
   }
-  .box{
+  .box {
     display: flex;
     flex-wrap: wrap;
     margin-left: 20px;
     background-color: rgb(0, 0, 0);
-    .card{
+    .card {
       font-size: large;
       margin: 10px;
-      width:max-content;
+      width: max-content;
       padding: 10px 40px 10px 40px;
       display: flex;
       cursor: pointer;
@@ -149,29 +149,33 @@
       align-items: center;
       border: 0.2px solid rgb(47, 47, 47);
       border-radius: 0.4rem;
-     
     }
   }
 }
 .container {
   display: flex;
 }
-.activate3{
+.activate3 {
   background-color: white;
-  color:black;
+  color: black;
   cursor: pointer;
- 
 }
-.main21{
-  form{
-    gap:12px;
-    input{
+.main21 {
+  form {
+    gap: 12px;
+    input {
       padding: 10px;
-      ;
     }
-    .content21{
-      padding: 10px 10px 80px ;
+    .content21 {
+      padding: 10px 10px 80px;
     }
   }
+}
+.scrollContainer {
+  max-height: 48vh; /* Adjust based on your layout */
+  width: 77vw;
+  overflow-y: auto;
+overflow-x: hidden;
+  padding: 10px;
 
 }

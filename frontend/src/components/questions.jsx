@@ -4,8 +4,16 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import Sidebar from "./sidebar";
 import QuestionCard from "./questioncard"; // Import the new component
-
+import { useDataContext } from "./context";
 export default function Questions() {
+
+//------------------------------
+const {addToHome} =useDataContext();
+
+const { data } = useDataContext();
+
+//-------------------
+
   const [questions, setQuestions] = useState([]);
   const [state, setState] = useState({ title: "", question: "" });
 
@@ -24,7 +32,7 @@ export default function Questions() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const { title, question } = state;
-
+    addToHome({title, question })
     if (title.trim() && question.trim()) {
       setQuestions([...questions, { title, question }]);
       setState({ title: "", question: "" });
@@ -66,7 +74,7 @@ export default function Questions() {
 
           {/* Scrollable Questions List */}
           <div className={style.scrollContainer}>
-            {questions.map((q, index) => (
+            {data.map((q, index) => (
               <QuestionCard
                 key={index}
                 title={q.title}

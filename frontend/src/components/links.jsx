@@ -5,13 +5,29 @@ import { LuFacebook } from "react-icons/lu";
 import { FiLinkedin } from "react-icons/fi";
 import { PiTelegramLogo } from "react-icons/pi";
 import { FaQuora } from "react-icons/fa6";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 import { CiGlobe } from "react-icons/ci";
 import { BiLogoPinterestAlt } from "react-icons/bi";
 import Sidebar from "./sidebar";
 import { FaInstagram } from "react-icons/fa";
 import { FiYoutube } from "react-icons/fi";
 import { IoLogoReddit } from "react-icons/io5";
+import { useDataContext } from "./context";
 export default function Links() {
+  //------------------------------------
+  const { addToHome } = useDataContext();
+
+  //-------------------
+
+  const toastOptions = {
+    position: "bottom-right",
+    autoClose: 5000,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "light",
+  };
+
   const [state, setstate] = useState({
     title: "",
   });
@@ -20,28 +36,29 @@ export default function Links() {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    const { data } = await axios.post("http://localhost:8000/api/links", {
-      title,
-      question,
-    });
-    if (data.status === false) {
-      toast.error(data.message, toastOptions);
-    }
-    if (data.status === true) {
-      setstate({ title: "", question: "" });
-      toast.success("Question is successfully added", toastOptions);
-    }
+    const { title } = state;
+    addToHome({ title });
+    setstate({ title: "" });
+    toast.success("Links successfully added", toastOptions);
+    // const { data } = await axios.post("http://localhost:8000/api/links", {
+    //   title,
+    //   question,
+    // });
+    // if (data.status === false) {
+    //   toast.error(data.message, toastOptions);
+    // }
+    // if (data.status === true) {
+    //   setstate({ title: "", question: "" });
+    //   toast.success("Question is successfully added", toastOptions);
+    // }
   };
   return (
     <>
       <div className={style.container3}>
         <div className={style.main}>
-         
-            <div className={style.scrollContainer}>
-            
-              <h1>Links</h1>
-              <div className={style.section}>
+          <div className={style.scrollContainer}>
+            <h1>Links</h1>
+            <div className={style.section}>
               <form onSubmit={(event) => handleSubmit(event)}>
                 <div className={style.box4}>
                   <LuFacebook
