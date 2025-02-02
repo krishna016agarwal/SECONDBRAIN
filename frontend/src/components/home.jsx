@@ -51,13 +51,13 @@ export default function Home() {
               }
             
           };
-            useEffect(()=>{
-      if(localStorage.getItem("user")){
-  toast.success(
-        "Login Successfully",
-        toastOptions
-      );
-      }},[])
+  //           useEffect(()=>{
+  //     if(localStorage.getItem("user")){
+  // toast.success(
+  //       "Login Successfully",
+  //       toastOptions
+  //     );
+  //     }},[])
   return (
     <>
       <div className={style.container}>

@@ -15,7 +15,7 @@ p{
         a{
             text-decoration: none;
             color: white;
-          
+          border-radius: 10.6rem;
             .symbol{
                 display: flex;
                 gap:12px;
