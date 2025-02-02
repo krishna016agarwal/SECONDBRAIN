@@ -17,7 +17,9 @@
         gap:1rem;
         width:370px;
        
-    
+    .box4{
+        display: flex;
+    }
         border: 0.2px solid rgb(65, 65, 65);
         border-radius: 0.4rem;
         padding: 20px 40px 34px;

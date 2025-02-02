@@ -1,6 +1,7 @@
 import React from 'react'
 import style from "./question.module.css";
 import { useState,useEffect } from 'react';
+import Sidebar from './sidebar';
 export default function Creativity() {
      const [state, setstate] = useState({
             title:"",
@@ -28,7 +29,8 @@ export default function Creativity() {
           };
   return (
    <>
-      <div className={style.main}>
+    <div className={style.container2}>
+    <div className={style.main}>
           <h1>Creativity</h1>
           <form onSubmit={(event)=>handleSubmit(event)}>
           <input
@@ -50,6 +52,9 @@ export default function Creativity() {
              <button type="submit">Add creativity</button>
           </form>
       </div>
+      <Sidebar isactivate2={"creativity"}></Sidebar>
+    </div>
+    
       </>
   )
 }

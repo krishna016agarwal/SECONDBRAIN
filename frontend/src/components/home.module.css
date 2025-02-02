@@ -1,41 +1,177 @@
-.main{
+.main {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: rgb(0, 0, 0);
+  height: 100vh;
+  padding: 40px;
+  width: 80vw;
+  h2{
+    margin-top: 30px;
+  }
+  .section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    background-color: rgb(42, 42, 42);
+    padding: 4px ;
+    cursor: pointer;
+    border-radius: 0.6rem;
+    .sec {
+      width: 370px;
+      text-align: center;
+      padding: 13px;
+      font-size: large;
+    }
+    .activate {
+      background-color: black;
+      padding: 13px;
+      border-radius: 0.6rem;
+    }
+  }
+  .body {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    background-color: rgb(42, 42, 42);
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 0.6rem;
+    .sec2 {
+      width:270px;
+
+      text-align: center;
+      padding: 10px;
+      font-size: larger;
+    }
+    .activate{
+            background-color: black;
+              padding: 13px;
+              border-radius: 0.6rem;
+        }
+  }
+  h3 {
+    margin-top: 20px;
+  }
+  form {
+    display: flex;
+    margin-top: 28px;
+    flex-direction: column;
+    gap: 3rem;
+    input {
+      color: white;
+      background-color: black;
+      padding: 30px;
+      outline: none;
+      border: 0.2px solid rgb(65, 65, 65);
+      border-radius: 0.4rem;
+    }
+    button {
+      background-color: #fffeff;
+      color: rgb(0, 0, 0);
+      padding: 1rem 2rem;
+      cursor: pointer;
+      border: none;
+      font-weight: bold;
+      border-radius: 0.4rem;
+      font-size: 1rem;
+
+      outline: none;
+    }
+  }
+  .container {
+    border-radius: 0.6rem;
+    border: 0.2px solid rgb(65, 65, 65);
+    height: 150px;
+    width: 520px;
+    margin-top: 30px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
-    color:white;
-    background-color: rgb(0, 0, 0);
-    height: 100vh;
-    padding: 40px ;
-    width:80vw;
-    h3{
-        margin-top: 20px;
+    .head {
+      display: flex;
+      justify-content: space-between;
     }
-    form{
-        display: flex;
-        margin-top: 28px;
-    flex-direction: column; 
-    gap:3rem;
-    input{
-        color:white;
-        background-color: black;
-        padding: 30px;
-        outline: none;
-        border: 0.2px solid rgb(65, 65, 65);
-        border-radius: 0.4rem;
-    }
-    button{
-        background-color: #fffeff;
-        color: rgb(0, 0, 0);
-        padding: 1rem 2rem;
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      button {
+        color: rgb(255, 255, 255);
+        padding: 0.7rem 20px;
         cursor: pointer;
         border: none;
         font-weight: bold;
         border-radius: 0.4rem;
-        font-size: 1rem;
-       
-        outline: none;
+      }
+      .share {
+        color: rgb(255, 255, 255);
+        border: 1px solid rgb(65, 65, 65);
+        border-radius: 0.7rem;
+        background-color: black;
+      }
+      .delete {
+        background-color: rgb(106, 16, 16);
+      }
     }
+    .body2 {
+      margin: 3px 0px 3px 0px;
+      height: 60px;
     }
-}
-.container{
+  }
+
+  .search{
     display: flex;
+    input{
+      color: white;
+      background-color: black;
+      padding: 10px;
+      outline: none;
+      border: 0.2px solid rgb(51, 51, 51);
+      border-radius: 0.4rem;
+     height: 10vh;
+      margin-top: 10px;
+      width: 50vw;
+    }
+  }
+  .box{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    background-color: rgb(0, 0, 0);
+    .card{
+      font-size: large;
+      margin: 10px;
+      width:max-content;
+      padding: 10px 40px 10px 40px;
+      display: flex;
+      cursor: pointer;
+      justify-content: center;
+      align-items: center;
+      border: 0.2px solid rgb(47, 47, 47);
+      border-radius: 0.4rem;
+     
+    }
+  }
+}
+.container {
+  display: flex;
+}
+.activate3{
+  background-color: white;
+  color:black;
+  cursor: pointer;
+ 
+}
+.main21{
+  form{
+    gap:12px;
+    input{
+      padding: 10px;
+      ;
+    }
+    .content21{
+      padding: 10px 10px 80px ;
+    }
+  }
+
 }

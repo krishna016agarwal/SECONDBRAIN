@@ -78,7 +78,7 @@ export default function Questions() {
             </div>
           </div>
         </div>
-        <Sidebar></Sidebar>
+        <Sidebar isactivate2={"questions"}></Sidebar>
       </div>
     </>
   );

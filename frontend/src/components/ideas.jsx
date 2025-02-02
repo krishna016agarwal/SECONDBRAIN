@@ -53,7 +53,7 @@ export default function Ideas() {
               <button type="submit">Add idea</button>
            </form>
        </div>
-       <Sidebar></Sidebar>
+       <Sidebar isactivate2={"ideas"}></Sidebar>
         </div>
        </>
   )

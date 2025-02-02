@@ -6,6 +6,7 @@ import logo from "../assets/logo.png";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
+import { LuBrain } from "react-icons/lu";
 export const Signup = () => {
    const navigate = useNavigate();
   const [state, setstate] = useState({
@@ -42,10 +43,10 @@ export const Signup = () => {
     }
     return true;
   };
-  useEffect(()=>{
-      if(localStorage.getItem("user")){
-  navigate("/")
-      }},[])
+  // useEffect(()=>{
+  //     if(localStorage.getItem("user")){
+  // navigate("/")
+  //     }},[])
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -72,8 +73,9 @@ export const Signup = () => {
       <div className={style.main}>
         <form onSubmit={(event) => handleSubmit(event)}>
           <div className={style.brand}>
-            <img src={logo} className={style.logo}></img>
+          <LuBrain style={{ color: "rgb(168 85 247 )" ,width:"100px", height:"50px"}}/>
             <h1> Second Brain</h1>
+            <p style={{color:"rgb(156 163 175)"}}>Start organizing your thoughts today</p>
           </div>
           <input
             type="text"

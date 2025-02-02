@@ -2,7 +2,7 @@ import React from "react";
 import style from "./signup.module.css";
 import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import logo from "../assets/logo.png";
+import { LuBrain } from "react-icons/lu";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
@@ -35,11 +35,11 @@ export const Login = () => {
     } 
     return true;
   };
-  useEffect(()=>{
-    if(localStorage.getItem("user")){
-navigate("/")
-    }
-  },[])
+//   useEffect(()=>{
+//     if(localStorage.getItem("user")){
+// navigate("/")
+//     }
+//   },[])
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -67,8 +67,9 @@ navigate("/")
       <div className={style.main}>
         <form onSubmit={(event) => handleSubmit(event)}>
           <div className={style.brand}>
-            <img src={logo} className={style.logo}></img>
-            <h1>Bond</h1>
+          <LuBrain style={{ color: "rgb(168 85 247 )" ,width:"100px", height:"50px"}}/>
+            <h1>Second Brain</h1>
+             <p style={{color:"rgb(156 163 175)"}}>Sign in to access your Second Brain</p>
           </div>
           <input
             type="text"
